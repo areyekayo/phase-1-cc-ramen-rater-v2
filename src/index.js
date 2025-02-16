@@ -1,9 +1,6 @@
 // index.js
 
 //Callbacks
-
-const ramenMenu = document.getElementById("ramen-menu");
-
 const handleClick = (ramen) => {
 	//get the ramenDetail div
 	const ramenDetail = document.getElementById('ramen-detail');
@@ -18,6 +15,7 @@ const handleClick = (ramen) => {
 
 const addSubmitListener = () => {
 	const form = document.getElementById("new-ramen");
+	const ramenMenu = document.getElementById("ramen-menu");
 
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
@@ -36,7 +34,7 @@ const addSubmitListener = () => {
 		image.src = newRamen.image;
 		image.addEventListener('click', () => handleClick(newRamen));
 
-		ramenMenu.appendChild(image)
+		ramenMenu.append(image)
 
 		form.reset();
 
@@ -44,6 +42,8 @@ const addSubmitListener = () => {
 }
 
 const displayRamens = () => {
+	const ramenMenu = document.getElementById("ramen-menu");
+
 	fetch("http://localhost:3000/ramens")
 	.then((res) => res.json())
 	.then((json) => {
@@ -62,7 +62,7 @@ const main = () => {
 	document.addEventListener("DOMContentLoaded", () => {
 		displayRamens();
 		addSubmitListener();
-	} )
+	})
 
 }
 
