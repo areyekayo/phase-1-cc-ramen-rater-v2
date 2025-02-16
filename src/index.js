@@ -1,6 +1,7 @@
 // index.js
 
 //Callbacks
+//Core Deliverables
 const handleClick = (ramen) => {
 	//get the ramenDetail div
 	const ramenDetail = document.getElementById('ramen-detail');
@@ -65,6 +66,9 @@ const main = () => {
 	})
 
 }
+
+//Advanced Deliverables
+
 
 main()
 
